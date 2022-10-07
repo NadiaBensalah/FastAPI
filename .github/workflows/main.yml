@@ -4,9 +4,9 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ "main" ]
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -14,21 +14,21 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-
-    
-      - name: executing ssh commnads uisng ssh key
-        run:  appleboy/sshaction/master
+      - name: executing ssh commands using ssh key
+        uses: appleboy/ssh-action@master
         with:
-          host: ${{secrest.HOST}}
-          username: ${{secrest.USERNAME}}
-          key: ${{secrest.KEY}}
+          host: ${{ secrets.HOST}}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
           script: |
-           git clone git@github.com:NadiaBensalah/FastAPI.git
-           cd FastAPI
-           sudo docker-compose up -d
+            rm -rf anonymization-api
+            git clone git@github.com:NadiaBensalah/FastAPI.git
+            cd FastAPI
+            sudo docker-compose build
+            sudo docker-compose up -d
