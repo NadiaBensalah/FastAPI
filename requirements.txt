@@ -1,0 +1,8 @@
+fastapi
+sklearn
+pydantic
+uvicorn
+pandas
+joblib
+pickle-mixin
+pytube
