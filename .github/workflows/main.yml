@@ -23,7 +23,7 @@ jobs:
 
     
       - name: executing ssh commnads uisng ssh key
-        uses: appleboy/ssh-action@v0.1.2
+        run:  appleboy/sshaction/master
         with:
           host: ${{secrest.HOST}}
           username: ${{secrest.USERNAME}}
