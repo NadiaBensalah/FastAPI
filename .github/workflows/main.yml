@@ -21,12 +21,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: executing ssh commands using ssh key
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST}}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          script: |
+      - id : appleboy/ssh-action@master
+        run: |
+            ssh -i "nadiakey.pem" ubuntu@ec2-13-39-96-170.eu-west-3.compute.amazonaws.com
             rm -rf FastAPI-api
             git clone git@github.com:NadiaBensalah/FastAPI.git
             cd FastAPI
