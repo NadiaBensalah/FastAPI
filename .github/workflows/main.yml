@@ -22,6 +22,7 @@ jobs:
     steps:
       - name: executing ssh commands using ssh key
         run: |
+            echo 'ok'
             ssh -i ${{ secrets.KEY }} ubuntu@ec2-13-39-96-170.eu-west-3.compute.amazonaws.com
             rm -rf anonymization-api
             git clone git@github.com:NadiaBensalah/FastAPI.git
