@@ -38,7 +38,7 @@ jobs:
             mkdir test
             pwd
             rm -rf FastAPI
-            git clone https://NadiaBensalah:$token@github.com/NadiaBensalah/FastAPI.git
+            git clone https://NadiaBensalah:${{ secrets.TOKEN  }}@github.com/NadiaBensalah/FastAPI.git
             cd FastAPI
             sudo docker-compose build
             echo 'yes'
