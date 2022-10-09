@@ -26,6 +26,7 @@ jobs:
           AWS_EC2_PUBLIC_IP: ${{ secrets.AWS_EC2_PUBLIC_IP}}
           AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME}}
         run: |
+            pwd
             echo 'ok'
             echo 'o0o'
             echo $AWS_EC2_PEM > nadiakey && chmod 600 nadiakey
