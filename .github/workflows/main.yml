@@ -33,7 +33,6 @@ jobs:
             echo 'o0o'
             echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
             echo 'ok 2'
-            AWS_EC2_METADATA_DISABLED=true
             echo 'aaa1'
             echo 'nadiakey'
             ssh -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}         
