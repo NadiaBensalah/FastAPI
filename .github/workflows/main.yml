@@ -23,10 +23,11 @@ jobs:
       - name: executing ssh commands using ssh key
         uses: appleboy/ssh-action@master
 
-        env:
-          KEY: ${{ secrets.KEY }}
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME  }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME  }}
+          key: ${{ secrets.KEY  }}
+
           script: 
             whoami
             echo 'ook'
