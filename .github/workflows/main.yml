@@ -29,10 +29,10 @@ jobs:
             pwd
             echo 'ok'
             echo 'o0o'
-            echo $AWS_EC2_PEM > ../nadiakey && chmod 600 ../nadiakey
+            echo $AWS_EC2_PEM > nadiakey && chmod 600 nadiakey
             echo 'ok 2'
-            echo $AWS_EC2_PUBLIC_IP > ../AWS_EC2_PUBLIC_IP
-            echo $AWS_EC2_USERNAME > ../AWS_EC2_USERNAME
+            echo $AWS_EC2_PUBLIC_IP > AWS_EC2_PUBLIC_IP
+            echo $AWS_EC2_USERNAME > AWS_EC2_USERNAME
             echo 'aaa1'
             echo $nadiakey
             echo 'nadiakey'
