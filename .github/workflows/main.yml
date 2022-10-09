@@ -33,7 +33,7 @@ jobs:
             echo 'ook'
             echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
             echo 'ooook'
-            ssh -tt -i private_key AWS_EC2_USERNAME@AWS_EC2_PUBLIC_IP
+            ssh -tt -i private_key ubuntu@13.38.2.240
             echo 'second ok'
             mkdir test
             pwd
