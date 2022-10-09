@@ -23,7 +23,7 @@ from pytube import YouTube
 
 
 
-app=FastAPI(title='Youtube vide Topic',description='Nadia tna9al 3la wady')
+app=FastAPI(title='Nadia tna9al 3la wady',description='Nadia tna9al 3la wady')
 
 db=[]
 
