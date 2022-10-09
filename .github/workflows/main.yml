@@ -29,7 +29,7 @@ jobs:
           AWS_EC2_USERNAME: ${{ secrets.USERNAME  }}
           AWS_EC2_PEM: ${{ secrets.KEY  }}
 
-        run: 
+        run: |
             echo 'ook'
             echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
             echo 'ooook'
