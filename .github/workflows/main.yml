@@ -33,10 +33,12 @@ jobs:
             echo 'ook'
             echo 'ooook'
             echo 'second ok'
+            rm -rf test
             mkdir test
             pwd
             rm -rf FastAPI
             git clone https://NadiaBensalah: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@github.com/NadiaBensalah/FastAPI.git
             cd FastAPI
             sudo docker-compose build
+            echo 'yes'
             sudo docker-compose up -d
