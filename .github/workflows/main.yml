@@ -16,30 +16,25 @@ jobs:
   build:
     name: Build
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v2
       - name: executing ssh commands using ssh key
-
         env:
           AWS_EC2_PEM: ${{ secrets.AWS_EC2_PEM  }}
-          AWS_EC2_PUBLIC_IP: ${{ secrets.AWS_EC2_PUBLIC_IP}}
-          AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME}}
+          AWS_EC2_PUBLIC_IP: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
+          AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME  }}
         run: |
-            pwd
-            lsb_release -a
             echo 'ok'
-            echo 'o0o'
             echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
-            echo 'ok 2'
-            ls
-            echo 'aaa1'
-            echo 'nadiakey'
-            ssh -i private_key AWS_EC2_USERNAME@AWS_EC2_PUBLIC_IP       
+            echo 'ok'
+            ssh -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}
             echo 'second ok'
             rm -rf FastAPI
             git clone git@github.com:NadiaBensalah/FastAPI.git
             cd FastAPI
             sudo docker-compose build
             sudo docker-compose up -d
+
