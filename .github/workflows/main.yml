@@ -27,7 +27,8 @@ jobs:
           AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME}}
         run: |
             echo 'ok'
-            "$AWS_EC2_PEM" > private_key && chmod 600 private_key
+            echo 'oo'
+            $AWS_EC2_PEM > private_key && chmod 600 private_key
             echo 'ok 2'
             ssh -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}
             echo 'second ok'
