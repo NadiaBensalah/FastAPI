@@ -1,3 +1,16 @@
+
+Conversation ouverte. 1 message non lu.
+
+Aller au contenu
+Utiliser Gmail avec un lecteur d'écran
+2 sur 1 736
+appleboy
+Boîte de réception
+Nedia BENSALAH <nedia.ben.salah@gmail.com>
+	
+16:18 (il y a 38 minutes)
+	
+À moi
 # This is a basic workflow to help you get started with Actions
 
 name: CI
@@ -16,24 +29,21 @@ jobs:
   build:
     name: Build
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
       - name: executing ssh commands using ssh key
+        uses: appleboy/ssh-action@master
 
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME  }}
+          key: ${{ secrets.KEY  }}
 
-        env:
-          AWS_EC2_PUBLIC_IP: ${{ secrets.HOST }}
-          AWS_EC2_USERNAME: ${{ secrets.USERNAME  }}
-          AWS_EC2_PEM: ${{ secrets.KEY  }}
-
-        run: |
+          script:
             echo 'ook'
-            echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
             echo 'ooook'
-            ssh -tt -i private_key ubuntu@13.38.2.240
             echo 'second ok'
             mkdir test
             pwd
@@ -42,5 +52,8 @@ jobs:
             cd FastAPI
             sudo docker-compose build
             sudo docker-compose up -d
-            
 
+
+
+	
+	
