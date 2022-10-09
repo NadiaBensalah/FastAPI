@@ -32,6 +32,7 @@ jobs:
             echo 'ook'
             echo 'ooook'
             echo 'second ok'
+            mkdir test
             rm -rf FastAPI
             git clone git@github.com:NadiaBensalah/FastAPI.git
             cd FastAPI
