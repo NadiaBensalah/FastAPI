@@ -28,7 +28,7 @@ jobs:
           host: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
           username: ${{ secrets.AWS_EC2_USERNAME  }}
           run: |
-            echo 'ok'
+            echo 'ook'
             echo 'ok'
             echo 'second ok'
             rm -rf FastAPI
