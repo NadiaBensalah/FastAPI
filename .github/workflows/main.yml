@@ -29,6 +29,7 @@ jobs:
           AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME}}
         run: |
             pwd
+            lsb_release -a
             echo 'ok'
             echo 'o0o'
             echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
