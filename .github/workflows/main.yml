@@ -24,9 +24,9 @@ jobs:
         uses: appleboy/ssh-action@master
 
         env:
-          key: ${{ secrets.KEY }}
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME  }}
+          KEY: ${{ secrets.KEY }}
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME  }}
           script: 
             whoami
             echo 'ook'
