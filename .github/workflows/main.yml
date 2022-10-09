@@ -20,13 +20,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: appleboy/ssh-action@master
       - name: executing ssh commands using ssh key
-        env:
+        uses: appleboy/ssh-action@master
+
+        with:
           key: ${{ secrets.AWS_EC2_PEM  }}
           host: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
           username: ${{ secrets.AWS_EC2_USERNAME  }}
-        run: |
+          run: |
             echo 'ok'
             echo 'ok'
             echo 'second ok'
