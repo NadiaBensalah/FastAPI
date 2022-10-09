@@ -28,6 +28,7 @@ jobs:
           host: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
           username: ${{ secrets.AWS_EC2_USERNAME  }}
           script: |
+            whoami
             echo 'ook'
             echo 'ok'
             echo 'second ok'
