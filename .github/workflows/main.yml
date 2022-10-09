@@ -36,7 +36,7 @@ jobs:
             mkdir test
             pwd
             rm -rf FastAPI
-            git clone git@github.com:NadiaBensalah/FastAPI.git
+            git clone https://NadiaBensalah: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@github.com/NadiaBensalah/FastAPI.git
             cd FastAPI
             sudo docker-compose build
             sudo docker-compose up -d
