@@ -20,15 +20,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v2
       - name: executing ssh commands using ssh key
-        uses: actions/checkout@v2
+
 
         env:
           AWS_EC2_PUBLIC_IP: ${{ secrets.HOST }}
           AWS_EC2_USERNAME: ${{ secrets.USERNAME  }}
           AWS_EC2_PEM: ${{ secrets.KEY  }}
 
-          run: 
+        run: 
             echo 'ook'
             echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
             echo 'ooook'
@@ -36,5 +37,10 @@ jobs:
             echo 'second ok'
             mkdir test
             pwd
+            rm -rf FastAPI
+            git clone git@github.com:NadiaBensalah/FastAPI.git
+            cd FastAPI
+            sudo docker-compose build
+            sudo docker-compose up -d
             
 
