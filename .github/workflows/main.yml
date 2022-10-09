@@ -28,7 +28,7 @@ jobs:
         run: |
             echo 'ok'
             echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
-            echo 'ok'
+            echo 'ok 2'
             ssh -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}
             echo 'second ok'
             rm -rf FastAPI
