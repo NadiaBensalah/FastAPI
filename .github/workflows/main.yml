@@ -24,9 +24,9 @@ jobs:
         uses: appleboy/ssh-action@master
 
         with:
-          key: ${{ secrets.AWS_EC2_PEM  }}
-          host: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
-          username: ${{ secrets.AWS_EC2_USERNAME  }}
+          key: ${{ secrets.KEY }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME  }}
           script: |
             whoami
             echo 'ook'
