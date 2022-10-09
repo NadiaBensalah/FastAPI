@@ -37,7 +37,7 @@ jobs:
             echo $AWS_EC2_USERNAME > AWS_EC2_USERNAME
             echo 'aaa1'
             echo 'nadiakey'
-            ssh -i nadiakey $AWS_EC2_USERNAME@$AWS_EC2_PUBLIC_IP           
+            ssh -i nadiakey ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}         
             echo 'second ok'
             rm -rf FastAPI
             git clone git@github.com:NadiaBensalah/FastAPI.git
