@@ -20,12 +20,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
       - name: executing ssh commands using ssh key
         env:
           AWS_EC2_PEM: ${{ secrets.AWS_EC2_PEM  }}
-          AWS_EC2_PUBLIC_IP: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
-          AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME  }}
+          AWS_EC2_PUBLIC_IP: ${{ secrets.AWS_EC2_PUBLIC_IP}}
+          AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME}}
         run: |
             echo 'ok'
             echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
