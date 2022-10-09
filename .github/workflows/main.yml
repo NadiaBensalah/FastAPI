@@ -29,7 +29,6 @@ jobs:
           key: ${{ secrets.KEY  }}
 
           script: 
-            whoami
             echo 'ook'
             echo 'ooook'
             echo 'second ok'
