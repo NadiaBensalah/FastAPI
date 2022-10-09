@@ -28,9 +28,9 @@ jobs:
         run: |
             echo 'ok'
             echo 'oo'
-            $AWS_EC2_PEM > private_key && chmod 600 private_key
+            $AWS_EC2_PEM > nadiakey.pem && chmod 600 private_key
             echo 'ok 2'
-            ssh -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}
+            ssh -i nadiakey.pem ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}
             echo 'second ok'
             rm -rf FastAPI
             git clone git@github.com:NadiaBensalah/FastAPI.git
