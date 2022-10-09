@@ -20,17 +20,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
+      - uses: appleboy/ssh-action@master
       - name: executing ssh commands using ssh key
         env:
-          AWS_EC2_PEM: ${{ secrets.AWS_EC2_PEM  }}
-          AWS_EC2_PUBLIC_IP: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
-          AWS_EC2_USERNAME: ${{ secrets.AWS_EC2_USERNAME  }}
+          key: ${{ secrets.AWS_EC2_PEM  }}
+          host: ${{ secrets.AWS_EC2_PUBLIC_IP  }}
+          username: ${{ secrets.AWS_EC2_USERNAME  }}
         run: |
             echo 'ok'
-            echo "$AWS_EC2_PEM" > private_key && chmod 600 private_key
             echo 'ok'
-            ssh -i private_key ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}
             echo 'second ok'
             rm -rf FastAPI
             git clone git@github.com:NadiaBensalah/FastAPI.git
