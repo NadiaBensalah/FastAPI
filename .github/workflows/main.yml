@@ -31,13 +31,14 @@ jobs:
             pwd
             echo 'ok'
             echo 'o0o'
-            echo $AWS_EC2_PEM > ~/.ssh/nadiakey && chmod 600 ~/.ssh/nadiakey
+            echo $AWS_EC2_PEM > nadiakey && chmod 600 ssh/nadiakey
             echo 'ok 2'
             echo $AWS_EC2_PUBLIC_IP > AWS_EC2_PUBLIC_IP
             echo $AWS_EC2_USERNAME > AWS_EC2_USERNAME
             echo 'aaa1'
             echo 'nadiakey'
-            ssh -i ~/.ssh/nadiakey ${AWS_EC2_USERNAME}@${AWS_EC2_PUBLIC_IP}            echo 'second ok'
+            ssh -i nadiakey $AWS_EC2_USERNAME@$AWS_EC2_PUBLIC_IP           
+            echo 'second ok'
             rm -rf FastAPI
             git clone git@github.com:NadiaBensalah/FastAPI.git
             cd FastAPI
