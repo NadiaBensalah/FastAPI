@@ -7,9 +7,11 @@ Created on Fri Oct  7 08:44:32 2022
 
 
 
-
+#if you want to use hypercorn
 #hypercorn main:app --reload
-#☺http://127.0.0.1:8000/docs
+#http://127.0.0.1:8000/docs
+
+#here we are using uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
